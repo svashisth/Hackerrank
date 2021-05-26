@@ -4,28 +4,45 @@
 package com.intw.prep.kit.array;
 
 /**
- * @author AD79272
+ * https://www.hackerrank.com/challenges/minimum-swaps-2/problem
  *
  */
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
 public class MinimumSwaps2 {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		MinimumSwaps2 main = new MinimumSwaps2();
-		int[] arr = new int[] {4,3,1,2};
-		int minimumSwaps = main.minimumSwaps(arr);
-		System.out.println("main.minimumSwaps : " + minimumSwaps);
-	}
-
-	static int minimumSwaps(int[] arr) {
-		if(arr == null || arr.length <= 1)
-		{
-			return 0;
-		}
-		
-		return 0;
+    // Complete the minimumSwaps function below.
+    static int minimumSwaps(int[] a) {
+    	int swap=0;
+        for(int i=0;i<a.length;i++){
+            if(i+1!=a[i]){
+                int t=i;
+                while(a[t]!=i+1){
+                    t++;  
+                }
+                int temp=a[t];
+                a[t]=a[i];
+                a[i]=temp;
+                swap++;
+            }
+        }
+        return swap;
     }
-	
+
+    public static void main(String[] args) throws IOException {
+        int minimumSwaps = minimumSwaps(new int[] {2,1,4,5,6,8,7,3});
+        System.out.println(minimumSwaps);
+        
+        minimumSwaps = minimumSwaps(new int[] {2,3,4,1,5});
+        System.out.println(minimumSwaps);
+        
+        minimumSwaps = minimumSwaps(new int[] {1,3,5,2,4,6,7});
+        System.out.println(minimumSwaps);
+    }
 }
