@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .project
 *.log
 *.txt
 
+=======
+>>>>>>> 95548be8e3c75f56dbfb0b238439a05a9d95dfc4
 /target
 *.class
